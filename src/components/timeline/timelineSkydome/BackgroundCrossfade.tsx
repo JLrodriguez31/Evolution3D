@@ -8,7 +8,7 @@ type Props = {
   radius?: number;
   widthSegments?: number;
   heightSegments?: number;
-  anisotropy?: number | "max"; // texture anisotropy; "max" uses renderer capability
+  anisotropy?: number | "max";
 };
 
 export default function BackgroundCrossfade({
@@ -30,16 +30,16 @@ export default function BackgroundCrossfade({
         loader.load(
           url + "?v=" + Date.now(),
           (tex) => {
-            // Color space and mapping
             tex.colorSpace = THREE.SRGBColorSpace;
             tex.mapping = THREE.UVMapping;
-            // High-quality sampling
             tex.generateMipmaps = true;
             tex.minFilter = THREE.LinearMipmapLinearFilter;
             tex.magFilter = THREE.LinearFilter;
-            // Anisotropy for sharper grazing angles
             const maxAniso = gl.capabilities.getMaxAnisotropy?.() ?? 1;
-            const desired = anisotropy === "max" ? maxAniso : Math.min(maxAniso, anisotropy ?? 1);
+            const desired =
+              anisotropy === "max"
+                ? maxAniso
+                : Math.min(maxAniso, anisotropy ?? 1);
             tex.anisotropy = Math.max(1, desired);
             tex.needsUpdate = true;
             resolve(tex);
@@ -59,7 +59,6 @@ export default function BackgroundCrossfade({
     const prev = currentTexRef.current;
     loadTexture(path).then((tex) => {
       if (!mounted) return;
-      // Dispose previous to avoid memory leaks
       if (prev) prev.dispose();
       currentTexRef.current = tex;
       setRevision((r) => r + 1);
@@ -74,7 +73,12 @@ export default function BackgroundCrossfade({
     return (
       <mesh scale={[-1, 1, 1]}>
         <sphereGeometry args={[radius, widthSegments, heightSegments]} />
-        <meshBasicMaterial side={THREE.BackSide} color="#000" depthWrite={false} toneMapped={false} />
+        <meshBasicMaterial
+          side={THREE.BackSide}
+          color="#000"
+          depthWrite={false}
+          toneMapped={false}
+        />
       </mesh>
     );
   }

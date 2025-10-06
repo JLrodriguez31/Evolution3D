@@ -5,8 +5,12 @@ type Props = {
   radius?: number;
   period?: number;
 };
-//movimiento camara automatico
-export default function IdleCameraOrbit({ active, radius = 3, period = 120 }: Props) {
+
+export default function IdleCameraOrbit({
+  active,
+  radius = 3,
+  period = 120,
+}: Props) {
   const { camera, clock } = useThree();
   useFrame(() => {
     if (!active) return;

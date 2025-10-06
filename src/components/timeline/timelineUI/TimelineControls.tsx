@@ -9,10 +9,15 @@ type Props = {
   onSelect: (id: string) => void;
 };
 
-export default function TimelineControls({ index, loading, onPrev, onNext, onSelect }: Props) {
+export default function TimelineControls({
+  index,
+  loading,
+  onPrev,
+  onNext,
+  onSelect,
+}: Props) {
   return (
     <div className="flex items-center gap-4">
-      {/* Prev */}
       <Button
         variant="tertiary"
         onClick={onPrev}
@@ -23,7 +28,6 @@ export default function TimelineControls({ index, loading, onPrev, onNext, onSel
         Prev
       </Button>
 
-      {/* Center group: current label + bullets */}
       <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/[0.06] border border-white/10 backdrop-blur-sm shadow-sm">
         <div className="flex items-center gap-2">
           {eras.map((e, i) => (
@@ -43,7 +47,6 @@ export default function TimelineControls({ index, loading, onPrev, onNext, onSel
         </div>
       </div>
 
-      {/* Next */}
       <Button
         variant="tertiary"
         onClick={onNext}

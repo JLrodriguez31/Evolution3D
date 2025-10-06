@@ -19,13 +19,11 @@ export default function TimelineUI({
   loading = false,
 }: TimelineUIProps) {
   const navigate = useNavigate();
-  // Indice seguro (si no se encuentra el id, forzamos 0)
   const index = useMemo(() => {
     const i = eras.findIndex((e) => e.id === currentEra);
     return i < 0 ? 0 : i;
   }, [currentEra]);
 
-  // Si el id actual no existe (por espacios, edición manual, etc.) lo normalizamos al primero
   useEffect(() => {
     if (!eras.some((e) => e.id === currentEra)) {
       console.warn(
@@ -59,7 +57,6 @@ export default function TimelineUI({
     navigate(PATHS.eraId(era.id));
   };
 
-  // Teclado ← →
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") handlePrev();
@@ -70,7 +67,6 @@ export default function TimelineUI({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
-  // Pre-cargar imágenes siguientes / previas para crossfade más suave
   useEffect(() => {
     [eras[index - 1], eras[index + 1]].forEach((e) => {
       if (e?.image) {
@@ -95,7 +91,6 @@ export default function TimelineUI({
   return (
     <>
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5 select-none z-20">
-        {/* Portal principal */}
         <TimelinePortal
           era={era}
           color={color}
@@ -106,7 +101,6 @@ export default function TimelineUI({
           ref={portalRef}
         />
 
-        {/* Controles */}
         <TimelineControls
           index={index}
           loading={loading}
@@ -115,9 +109,6 @@ export default function TimelineUI({
           onSelect={(id) => setCurrentEra(id)}
         />
 
-        {/* Miniaturas horizontales removidas para usar solo las del rail */}
-
-        {/* Timeline rail inferior */}
         <TimelineRail
           index={index}
           loading={loading}
@@ -125,7 +116,6 @@ export default function TimelineUI({
         />
       </div>
 
-      {/* Video modal */}
       <VideoModal
         open={videoOpen}
         title={era.name}

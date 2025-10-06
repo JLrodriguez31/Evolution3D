@@ -1,9 +1,15 @@
 import React, { useRef } from "react";
 
-export function DragSafeCard({ onActivate, children }: { onActivate: () => void; children: React.ReactNode }) {
+export function DragSafeCard({
+  onActivate,
+  children,
+}: {
+  onActivate: () => void;
+  children: React.ReactNode;
+}) {
   const startRef = useRef<{ x: number; y: number } | null>(null);
   const movedRef = useRef(false);
-  const THRESHOLD = 6; // pixels
+  const THRESHOLD = 6;
 
   const onPointerDownCapture = (e: React.PointerEvent<HTMLDivElement>) => {
     startRef.current = { x: e.clientX, y: e.clientY };
