@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { memo, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -35,7 +35,7 @@ function SpinningModel({
   );
 }
 
-export function Card3D({
+function Card3DComponent({
   animal,
   enableZoom = false,
   minDistance = 1.8,
@@ -233,3 +233,19 @@ export function Card3D({
     </div>
   );
 }
+
+export const Card3D = memo(Card3DComponent, (prev, next) => {
+  return (
+    prev.animal === next.animal &&
+    prev.enableZoom === next.enableZoom &&
+    prev.minDistance === next.minDistance &&
+    prev.maxDistance === next.maxDistance &&
+    prev.widthClass === next.widthClass &&
+    prev.heightClass === next.heightClass &&
+    prev.className === next.className &&
+    prev.modelScale === next.modelScale &&
+    prev.lazyMount3D === next.lazyMount3D &&
+    prev.rootMargin === next.rootMargin &&
+    prev.clearOnUnmount === next.clearOnUnmount
+  );
+});
