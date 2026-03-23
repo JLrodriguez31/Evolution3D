@@ -36,7 +36,7 @@ export default function WelcomePage() {
   }, []);
 
   useEffect(() => {
-    const minDelay = window.setTimeout(() => setMinDelayDone(true), 750);
+    const minDelay = window.setTimeout(() => setMinDelayDone(true), 850);
     return () => window.clearTimeout(minDelay);
   }, []);
 
@@ -118,7 +118,7 @@ export default function WelcomePage() {
 
       {!disableSecondaryScene && (
         <div
-          className={`absolute left-1/2 -translate-x-1/2 scale-80 xl:scale-90 2xl:scale-100 sm:left-[75vw] xl:left-[70vw] 2xl:left-[65vw] top-47 sm:top-50 xl:top-52 pointer-events-auto h-1/2 w-90 z-20 transition-opacity duration-800 ease-out [clip-path:inset(20px_0_70px_0)] sm:[clip-path:inset(60px_0_70px_0)] 2xl:[clip-path:inset(90px_100px_95px_100px)] ${
+          className={`absolute left-1/2 -translate-x-1/2 scale-80 xl:scale-90 2xl:scale-100 sm:left-[75vw] xl:left-[70vw] 2xl:left-[65vw] top-35 xs:top-47 sm:top-50 xl:top-52 pointer-events-auto h-1/2 w-90 z-20 transition-opacity duration-800 ease-out [clip-path:inset(20px_0_70px_0)] sm:[clip-path:inset(60px_0_70px_0)] 2xl:[clip-path:inset(90px_100px_95px_100px)] ${
             pageReady ? "opacity-100" : "opacity-0"
           }`}
         >
