@@ -1,4 +1,4 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import type { Session, User } from "@supabase/supabase-js";
 
@@ -12,6 +12,10 @@ type AuthContextValue = {
   signInWithPassword: (
     email: string,
     password: string
+  ) => Promise<{ error?: string }>;
+  requestPasswordReset: (
+    email: string,
+    redirectPath?: string
   ) => Promise<{ error?: string }>;
   signUpWithPassword: (
     email: string,
@@ -110,38 +114,48 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [user]);
 
-  const signInWithGoogle = async (redirectPath?: string) => {
+  const signInWithGoogle = useCallback(async (redirectPath?: string) => {
     const redirectTo = `${window.location.origin}${redirectPath ?? "/admin"}`;
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo },
     });
-  };
+  }, []);
 
-  const signInWithPassword = async (email: string, password: string) => {
+  const signInWithPassword = useCallback(async (email: string, password: string) => {
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
     return { error: error?.message };
-  };
+  }, []);
 
-  const signUpWithPassword = async (
-    email: string,
-    password: string,
-    name?: string
-  ) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: name ? { full_name: name } : undefined },
-    });
-    return { error: error?.message, needsConfirm: !data.user?.confirmed_at };
-  };
+  const requestPasswordReset = useCallback(
+    async (email: string, redirectPath: string = "/login") => {
+      const redirectTo = `${window.location.origin}${redirectPath}`;
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo,
+      });
+      return { error: error?.message };
+    },
+    []
+  );
 
-  const signOut = async () => {
+  const signUpWithPassword = useCallback(
+    async (email: string, password: string, name?: string) => {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: name ? { full_name: name } : undefined },
+      });
+      return { error: error?.message, needsConfirm: !data.user?.confirmed_at };
+    },
+    []
+  );
+
+  const signOut = useCallback(async () => {
     await supabase.auth.signOut();
-  };
+  }, []);
 
   const meta = (user?.app_metadata ?? {}) as Record<string, unknown>;
   const metaRole = typeof meta.role === "string" ? meta.role : null;
@@ -160,10 +174,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       role: effectiveRole ?? (isAdmin ? "admin" : "user"),
       signInWithGoogle,
       signInWithPassword,
+      requestPasswordReset,
       signUpWithPassword,
       signOut,
     }),
-    [user, session, loading, isAdmin, effectiveRole]
+    [
+      user,
+      session,
+      loading,
+      isAdmin,
+      effectiveRole,
+      signInWithGoogle,
+      signInWithPassword,
+      requestPasswordReset,
+      signUpWithPassword,
+      signOut,
+    ]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
