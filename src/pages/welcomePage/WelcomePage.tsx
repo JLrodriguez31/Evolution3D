@@ -81,7 +81,7 @@ export default function WelcomePage() {
     minDelayDone;
 
   return (
-    <main className="w-full h-dvh overflow-hidden relative bg-black">
+    <main className="w-full h-screen overflow-hidden relative bg-black">
       <div
         className={`absolute inset-0 z-50 grid place-items-center bg-black transition-opacity duration-500 ${
           pageReady ? "opacity-0 pointer-events-none" : "opacity-100"
