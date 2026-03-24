@@ -18,7 +18,7 @@
 
 ## 🎥 Preview
 
-### 💸 Budget Website app View
+### 💸 Evolution3D Preview
 ![Store Preview](preview/preview.gif)
 
 ---
