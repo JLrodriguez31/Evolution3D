@@ -84,7 +84,7 @@ npm run dev
 ## 📁 Project Structure
 
 ```
-📦 Budget-Website
+📦 Evolution3D
 ┣ 📂 public
 ┣ 📂 preview
 ┣ 📂 src/
@@ -145,4 +145,4 @@ npm run dev
 
 ## ⏳ Project Status
 
-![Static Badge](https://img.shields.io/badge/Complete-Complete?style=flat-square&label=Status)
+![Static Badge](https://img.shields.io/badge/Complete-Complete?style=flat-square&label=v1.0.0) ![Static Badge](https://img.shields.io/badge/Ongoing-purple?style=flat-square&label=v1.1.0) 
