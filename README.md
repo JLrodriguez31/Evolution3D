@@ -18,18 +18,42 @@
 
 ## 🎥 Preview
 
-### 💸 Evolution3D Preview
+### 🧬 Evolution3D Preview
 ![Store Preview](preview/preview.gif)
 
 ---
 
-### 🏠 Welcome Page
+### 🏠 Home Page
 ![Invalid Form](preview/WelcomePage.png)
 
 ---
 
-### 🧮 CalculatorPage
-![Valid Form](preview/CalculatorPage.png)
+### 🔐 Authentication Page
+![Valid Form](preview/AuthPage.png)
+
+---
+### ⏰ Timeline Page
+![Store Preview](preview/TimelinePage.gif)
+
+---
+
+### 🌄🏞️ Era Page
+![Invalid Form](preview/EraPage.png)
+
+---
+
+### 🦖 Animal Page
+![Valid Form](preview/AnimalPage.png)
+
+---
+
+### 🗺️ Map Page
+![Valid Form](preview/MapPage.png)
+
+---
+
+### 📸 Museum Page
+![Valid Form](preview/MuseumPage.png)
 
 ---
 
