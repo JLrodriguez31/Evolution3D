@@ -33,7 +33,7 @@
 
 ---
 ### ⏰ Timeline Page
-![Store Preview](public/preview/TimelinePage.gif)
+![Store Preview](public/preview/TimelinePage.png)
 
 ---
 
