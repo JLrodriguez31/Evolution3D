@@ -64,7 +64,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="relative min-h-screen bg-[url('/images/29.png')] bg-cover bg-no-repeat bg-center ">
+      <div className="relative min-h-screen bg-[url('/images/28.png')] bg-cover bg-no-repeat bg-center ">
       <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.1),rgba(0,0,0,0.01),rgba(0,0,0,0.01),rgba(0,0,0,0.8))]">
         <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl">
           {/* Left: Form card */}
@@ -84,7 +84,7 @@ const LoginPage = () => {
                 Welcome back!
               </h1>
               <p className="mt-2 text-center text-gray-500">
-                Eras in 360º, 3D animals, inmersive museum — all in one place.
+                3D animals, eras in 360º, inmersive museum — all in one place.
               </p>
               {error && (
                 <p className="text-red-500 mt-4 text-center text-sm">{error}</p>
@@ -137,7 +137,7 @@ const LoginPage = () => {
                 <button
                   type="button"
                   onClick={handleForgotPassword}
-                  className="text-gray-600 hover:text-black"
+                  className="text-gray-600 cursor-pointer hover:text-black"
                 >
                   Forgot password?
                 </button>
@@ -146,7 +146,7 @@ const LoginPage = () => {
               {/* Primary CTA */}
               <button
                 type="submit"
-                className="mt-6 w-full rounded-full bg-black text-white py-3 font-medium hover:bg-black/90 transition"
+                className="mt-6 w-full rounded-full cursor-pointer bg-black text-white py-3 font-medium hover:bg-black/90 transition"
               >
                 Log In
               </button>
@@ -162,7 +162,7 @@ const LoginPage = () => {
               <button
                 onClick={handleGoogleLogin}
                 type="button"
-                className="w-full rounded-full border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 py-3 font-medium flex items-center justify-center gap-2"
+                className="w-full rounded-full border cursor-pointer border-gray-300 bg-white hover:bg-yellow-50 text-gray-700 py-3 font-medium flex items-center justify-center gap-2"
               >
                 <svg
                   viewBox="0 0 24 24"
