@@ -19,41 +19,41 @@
 ## 🎥 Preview
 
 ### 🧬 Evolution3D Preview
-![Store Preview](preview/preview.gif)
+![Store Preview](public/preview/preview.gif)
 
 ---
 
 ### 🏠 Home Page
-![Invalid Form](preview/WelcomePage.png)
+![Invalid Form](public/preview/WelcomePage.png)
 
 ---
 
 ### 🔐 Authentication Page
-![Valid Form](preview/AuthPage.png)
+![Valid Form](public/preview/AuthPage.png)
 
 ---
 ### ⏰ Timeline Page
-![Store Preview](preview/TimelinePage.gif)
+![Store Preview](public/preview/TimelinePage.gif)
 
 ---
 
 ### 🌄🏞️ Era Page
-![Invalid Form](preview/EraPage.png)
+![Invalid Form](public/preview/EraPage.png)
 
 ---
 
 ### 🦖 Animal Page
-![Valid Form](preview/AnimalPage.png)
+![Valid Form](public/preview/AnimalPage.png)
 
 ---
 
 ### 🗺️ Map Page
-![Valid Form](preview/MapPage.png)
+![Valid Form](public/preview/MapPage.png)
 
 ---
 
 ### 📸 Museum Page
-![Valid Form](preview/MuseumPage.png)
+![Valid Form](public/preview/MuseumPage.png)
 
 ---
 
