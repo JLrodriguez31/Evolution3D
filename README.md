@@ -57,6 +57,15 @@
 
 ---
 
+### 📊🧮 Dashboard Page 
+![Valid Form](public/preview/DashboardPage.png)
+
+![Valid Form](public/preview/DashboardPage2.png)
+
+![Valid Form](public/preview/DashboardPage3.png)
+
+---
+
 ## 🛠️ Getting Started
 
 ### 1️⃣ Clone this repository
