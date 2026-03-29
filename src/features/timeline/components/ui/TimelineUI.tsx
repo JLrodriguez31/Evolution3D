@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { PATHS } from "../../../routes/routes";
-import { eras } from "../../../data/eras";
+import { PATHS } from "@/routes/routes";
+import { eras } from "@/data/eras";
 import TimelinePortal from "./TimelinePortal";
 import TimelineControls from "./TimelineControls";
 import TimelineRail from "./TimelineRail";

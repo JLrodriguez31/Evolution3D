@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link } from "react-router-dom";
-import { eras } from "../../data/eras";
-import Background from "../../components/ui/background/Background";
+import { eras } from "@/data/eras";
+import Background from "@/components/ui/background/Background";
 import logo from "/images/favicon.ico";
-import { Card3D } from "../../components/card/Card3D";
-import Navbar3 from "../../components/navbar/Navbar3";
+import { Card3D } from "@/features/animals/components/cards/Card3D";
+import Navbar3 from "@/components/navbar/Navbar3";
 import { getAnimalByName } from "@/services/animals";
-import AnimalHeader from "./components/AnimalHeader";
-import AnimalSpecs from "./components/AnimalSpecs";
-import EvolutionCarousel from "./components/EvolutionCarousel";
+import AnimalHeader from "@/features/animals/components/detail/AnimalHeader";
+import AnimalSpecs from "@/features/animals/components/detail/AnimalSpecs";
+import EvolutionCarousel from "@/features/animals/components/detail/EvolutionCarousel";
 import { getEraColor } from "@/services/eras";
 
 export default function AnimalPage() {

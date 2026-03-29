@@ -1,5 +1,5 @@
-import { eras } from "../../../data/eras";
-import { Button } from "../../ui/button/Button";
+import { eras } from "@/data/eras";
+import { Button } from "@/components/ui/button/Button";
 
 type Props = {
   index: number;

@@ -1,4 +1,4 @@
-import type { Animal } from "../../data/animals";
+import type { Animal } from "@/data/animals";
 
 export interface Card3DProps {
   animal: Animal;

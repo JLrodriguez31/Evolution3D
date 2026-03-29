@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { getAnimalsByNames } from "@/services/animals";
-import { DragSafeCard } from "@/components/card/DragSafeCard";
-import { Card3D } from "@/components/card/Card3D";
+import { DragSafeCard } from "@/features/animals/components/cards/DragSafeCard";
+import { Card3D } from "@/features/animals/components/cards/Card3D";
 import { getEvolutionChainFor } from "@/data/evolution";
 
 export function EvolutionCarousel({

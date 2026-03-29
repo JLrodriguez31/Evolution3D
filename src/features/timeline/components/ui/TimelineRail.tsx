@@ -1,4 +1,4 @@
-import { eras } from "../../../data/eras";
+import { eras } from "@/data/eras";
 
 type Props = {
   index: number;

@@ -1,15 +1,15 @@
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { useEffect, useMemo, useState } from "react";
-import { eras } from "../../data/eras";
+import { eras } from "@/data/eras";
 import logo from "/images/favicon.ico";
-import { Button } from "../../components/ui/button/Button";
-import IdleCameraOrbit from "../../components/timeline/timelineSkydome/IdleCameraOrbit";
-import BackgroundCrossfade from "../../components/timeline/timelineSkydome/BackgroundCrossfade";
-import LoaderOverlay from "../../components/timeline/timelineSkydome/LoaderOverlay";
-import WithProgressUI from "../../components/timeline/timelineSkydome/WithProgressUI";
+import { Button } from "@/components/ui/button/Button";
+import IdleCameraOrbit from "@/features/timeline/components/skydome/IdleCameraOrbit";
+import BackgroundCrossfade from "@/features/timeline/components/skydome/BackgroundCrossfade";
+import LoaderOverlay from "@/features/timeline/components/skydome/LoaderOverlay";
+import WithProgressUI from "@/features/timeline/components/skydome/WithProgressUI";
 import { TextureLoader } from "three";
-import Navbar3 from "../../components/navbar/Navbar3";
+import Navbar3 from "@/components/navbar/Navbar3";
 
 export default function MainScene() {
   const [currentEra, setCurrentEra] = useState<string>(eras[0]?.id || "");

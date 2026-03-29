@@ -1,4 +1,4 @@
-import UploadModelField from "@/components/admin/UploadModelField";
+import UploadModelField from "@/features/admin/components/UploadModelField";
 import type { Animal } from "@/data/animals";
 
 export type DbAnimal = Animal & { id?: string };

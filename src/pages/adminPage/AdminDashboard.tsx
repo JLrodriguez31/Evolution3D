@@ -1,8 +1,8 @@
 import { useState } from "react";
-import AnimalsAdmin from "./AnimalsAdmin.tsx";
-import ErasAdmin from "./ErasAdmin.tsx";
-import AdminHeader from "@/components/admin/AdminHeader";
-import AdminCharts from "@/components/admin/AdminCharts";
+import AnimalsAdmin from "@/features/admin/pages/AnimalsAdmin";
+import ErasAdmin from "@/features/admin/pages/ErasAdmin";
+import AdminHeader from "@/features/admin/components/AdminHeader";
+import AdminCharts from "@/features/admin/components/AdminCharts";
 
 export default function AdminDashboard() {
   const [tab, setTab] = useState<"animals" | "eras">("animals");

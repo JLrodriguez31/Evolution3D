@@ -8,7 +8,7 @@ import {
   Clone,
 } from "@react-three/drei";
 import { Group, ReinhardToneMapping, SRGBColorSpace } from "three";
-import { eras } from "../../data/eras";
+import { eras } from "@/data/eras";
 import { ERA_UUIDS, isUuid } from "@/data/eraIds";
 import type { Card3DProps } from "./Card3D.types";
 

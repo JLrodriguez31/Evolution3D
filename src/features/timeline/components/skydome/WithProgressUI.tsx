@@ -1,5 +1,5 @@
 import { useProgress } from "@react-three/drei";
-import TimelineUI from "../timelineUI/TimelineUI";
+import TimelineUI from "../ui/TimelineUI";
 
 type Props = {
   currentEra: string;
@@ -9,6 +9,10 @@ type Props = {
 export default function WithProgressUI({ currentEra, setCurrentEra }: Props) {
   const { active } = useProgress();
   return (
-    <TimelineUI currentEra={currentEra} setCurrentEra={setCurrentEra} loading={active} />
+    <TimelineUI
+      currentEra={currentEra}
+      setCurrentEra={setCurrentEra}
+      loading={active}
+    />
   );
 }

@@ -1,7 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import type { Animal } from "@/data/animals";
-import { AnimalsToolbar, AnimalsList, AnimalsEditModal } from "./animals";
+import {
+  AnimalsToolbar,
+  AnimalsList,
+  AnimalsEditModal,
+} from "../components/animals";
 
 type DbAnimal = Animal & { id?: string };
 type DbAnimalRow = {

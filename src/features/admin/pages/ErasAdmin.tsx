@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
-import { supabase } from "../../lib/supabaseClient";
-import { ErasToolbar, ErasList, ErasEditModal } from "./eras";
+import { supabase } from "@/lib/supabaseClient";
+import { ErasToolbar, ErasList, ErasEditModal } from "../components/eras";
 
 type EraRow = { id: string; name: string; period?: string | null };
 
