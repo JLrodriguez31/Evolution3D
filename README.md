@@ -18,18 +18,51 @@
 
 ## 🎥 Preview
 
-### 💸 Evolution3D Preview
-![Store Preview](preview/preview.gif)
+### 🧬 Evolution3D Preview
+![Store Preview](public/preview/preview.gif)
 
 ---
 
-### 🏠 Welcome Page
-![Invalid Form](preview/WelcomePage.png)
+### 🏠 Home Page
+![Invalid Form](public/preview/WelcomePage.png)
 
 ---
 
-### 🧮 CalculatorPage
-![Valid Form](preview/CalculatorPage.png)
+### 🔐 Authentication Page
+![Valid Form](public/preview/AuthPage.png)
+
+---
+### ⏰ Timeline Page
+![Store Preview](public/preview/TimelinePage.png)
+
+---
+
+### 🌄🏞️ Era Page
+![Invalid Form](public/preview/EraPage.png)
+
+---
+
+### 🦖 Animal Page
+![Valid Form](public/preview/AnimalPage.png)
+
+---
+
+### 🗺️ Map Page
+![Valid Form](public/preview/MapPage.png)
+
+---
+
+### 📸 Museum Page
+![Valid Form](public/preview/MuseumPage.png)
+
+---
+
+### 📊🧮 Dashboard Page 
+![Valid Form](public/preview/DashboardPage.png)
+
+![Valid Form](public/preview/DashboardPage2.png)
+
+![Valid Form](public/preview/DashboardPage3.png)
 
 ---
 
@@ -60,7 +93,7 @@ npm run dev
 ## 📁 Project Structure
 
 ```
-📦 Budget-Website
+📦 Evolution3D
 ┣ 📂 public
 ┣ 📂 preview
 ┣ 📂 src/
@@ -121,4 +154,4 @@ npm run dev
 
 ## ⏳ Project Status
 
-![Static Badge](https://img.shields.io/badge/Complete-Complete?style=flat-square&label=Status)
+![Static Badge](https://img.shields.io/badge/Complete-Complete?style=flat-square&label=v1.0.0) ![Static Badge](https://img.shields.io/badge/Ongoing-purple?style=flat-square&label=v1.1.0) 
