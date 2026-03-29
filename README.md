@@ -1,20 +1,42 @@
 # 🧬 Evolution3D
 
+## 🚀 Demo
 
-## 🧠 Goals
+👉 <a href="https://evolution3d.vercel.app/"> evolution3d.vercel.app </a>
 
-- Put into practice React concepts as components, hooks and props.
-- Using typescript correctly.
-- Structure the project well.
-- Inmersive experience for the users.
-- Implement 3D features to the project.
+## 🧠 Overview
 
-## 📝 Key Tasks for the project
+Evolution3D is a web application designed to explore animals across different biological eras using an interactive 3D environment.
 
-- Develop an application with the aim of show animal from different eras in 3D.
-- The user will have to be able to see eras in 360 degrees.
-- Make a responsive and improved design.
-- Create a dashboard to show metrics and manage the new updates for the app. Only the role admin will be able to manage the dashboard.
+The application combines:
+
+- Real-time 3D rendering (Three.js).
+- Dynamic data from a backend (Supabase).
+- An admin dashboard to manage content and assets.
+  
+<br>
+
+<details>
+      
+  <summary>🔐 Admin Dashboard</summary>
+  
+
+&nbsp;&nbsp;&nbsp;**A protected admin interface allows managing the system data:**
+
+- Role-based access control (RBAC)
+- Protected routes using authentication guards
+- CRUD operations for:
+  - Animals
+  - Geological eras
+  - 3D assets and media
+
+</details>
+
+  <br>
+
+Users can navigate through timelines, explore species, and interact with 3D models, while administrators can manage the underlying data through a protected interface.
+
+---
 
 ## 🎥 Preview
 
@@ -89,6 +111,31 @@ npm install
 npm run dev
 ```
 
+---
+
+## 🏗 Architecture
+
+The system is structured into three main layers:
+
+### 🔷 3D Rendering Layer
+
+- Handles scene creation, rendering loop, and user interaction.
+- Built with Three.js and React Three Fiber.
+- Dynamically renders content based on backend data.
+
+### 🔷 Data Layer
+
+- Supabase (PostgreSQL) for persistent data storage.
+- Authentication and user management.
+- Storage for 3D assets (.glb models, images).
+
+### 🔷 Application Layer
+
+- React + TypeScript frontend
+- TanStack Query for server state management
+- Feature-based architecture separating UI, services, and logic
+
+---
 
 ## 📁 Project Structure
 
@@ -98,20 +145,22 @@ npm run dev
 ┣ 📂 preview
 ┣ 📂 src/
       ┣ 📂 assets  
-      ┣ 📂 Features
-         ┣ 📂 BudgetForm
-            ┣ 📂 Components
-                ┣ 📄 BudgetForm.tsx
-                ┣ 📄 BudgetList.tsx
-                ┗ 📄 SortButtons.tsx
+      ┣ 📂 features
+         ┣ 📂 admin
+            ┣ 📂 components
+                ┣ 📄 AuthProvider.tsx
+                ┣ 📄 ProtectedRoute.tsx
+                ┣ 📄 UseAuth.ts
+                ┗ 📄 AuthService.ts
             ┗ 📂 Types
                 ┗ 📄 budgetTypes.ts
-         ┣ 📂 Cards
-            ┣ 📂 Components
-                ┣ 📄 Card.tsx
-                ┣ 📄 Checkbox.tsx
-                ┣ 📄 CardList.tsx
-                ┗ 📄 WebOptions.tsx
+         ┣ 📂 animals
+            ┣ 📂 components
+                ┣ 📄 Card3D.tsx
+                ┣ 📄 DragSafeCard.tsx
+                ┣ 📄 AnimalHeader.tsx
+                ┣ 📄 EvolutionCarousel.tsx
+                ┗ 📄 AnimalSpecs.tsx
             ┣ 📂 data
                 ┣ 📄 services.ts
             ┣ 📂 hooks
@@ -120,17 +169,31 @@ npm run dev
                 ┣ 📄 calculateTotal.ts
             ┗ 📂 Types
                 ┗ 📄 servicesTypes.ts  
-         ┗ 📂 InfoModal
-            ┗ 📄 InfoModal.tsx
+         ┗ 📂 timeline
+            ┣ 📂 skydome
+            ┗ 📂 ui
       ┣ 📂 pages
-         ┣ 📄 CalculatorPage.tsx
+         ┣ 📄 AdminPage.tsx
+         ┣ 📄 AnimalPage.tsx
+         ┣ 📄 EraPage.tsx
+         ┣ 📄 LoginPage.tsx
+         ┣ 📄 MapPage.tsx
+         ┣ 📄 MusueumPage.tsx
+         ┣ 📄 TimelinePage.tsx
+         ┣ 📄 RegisterPage.tsx
          ┗ 📄 WelcomePage.tsx
+      ┣ 📂 router
+      ┣ 📂 services
+         ┣ 📄 animals.ts
+         ┗ 📄 eras.ts
       ┣ 📄 app.tsx
       ┣ 📄 main.tsx
       ┗ 📄 styles.css
 ┗ 📄 index.html
 
 ```
+
+---
 
 ## 🛠 Technologies Used
 
