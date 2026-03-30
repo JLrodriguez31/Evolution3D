@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import AnimalsAdmin from "@/pages/adminPage/AnimalsAdmin";
+import AnimalsAdmin from "@/features/admin/pages/AnimalsAdmin";
 
 // Supabase mock (simple): captura insert y devuelve listas vacías
 vi.mock("@/lib/supabaseClient", () => {
@@ -30,15 +30,19 @@ vi.mock("@/lib/supabaseClient", () => {
 });
 
 // Componentes pesados: mocks livianos
-vi.mock("@/components/admin/UploadModelField", () => ({
+vi.mock("@/features/admin/components/UploadModelField", () => ({
   default: ({ onUploaded }: { onUploaded: (url: string) => void }) => (
     <button onClick={() => onUploaded("https://example.com/model.glb")}>
       MockUpload
     </button>
   ),
 }));
-vi.mock("@/components/admin/AdminHeader", () => ({ default: () => <div /> }));
-vi.mock("@/components/admin/AdminCharts", () => ({ default: () => <div /> }));
+vi.mock("@/features/admin/components/AdminHeader", () => ({
+  default: () => <div />,
+}));
+vi.mock("@/features/admin/components/AdminCharts", () => ({
+  default: () => <div />,
+}));
 
 describe("AnimalsAdmin casos simples", () => {
   it("abre el modal de creación", async () => {

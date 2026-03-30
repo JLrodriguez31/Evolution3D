@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useGLTF } from "@react-three/drei";
-import { eras } from "../../data/eras";
+import { eras } from "@/data/eras";
 import { useNavigate, useParams } from "react-router-dom";
-import Background from "../../components/ui/background/Background";
+import Background from "@/components/ui/background/Background";
 import logo from "/images/favicon.ico";
-import { Card3D } from "../../components/card/Card3D";
-import { DragSafeCard } from "../../components/card/DragSafeCard";
-import Navbar3 from "../../components/navbar/Navbar3";
+import { Card3D } from "@/features/animals/components/cards/Card3D";
+import { DragSafeCard } from "@/features/animals/components/cards/DragSafeCard";
+import Navbar3 from "@/components/navbar/Navbar3";
 import { getAnimals, getAnimalsByEra } from "@/services/animals";
 import { getEraColor } from "@/services/eras";
 
