@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="/public/images/logo3Dwhite.png" alt="MovieHorizon Logo" width="220" />
+	<img src="/public/images/logo3D.PNG" alt="MovieHorizon Logo" width="220" />
 	<h3>Learn about animals from all eras in an inmersive and interactive way</h3>
 
 	
