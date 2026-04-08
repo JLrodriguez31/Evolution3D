@@ -1,4 +1,11 @@
-# 🧬 Evolution3D
+<div align="center">
+	<img src="/public/images/logo3D.PNG" alt="MovieHorizon Logo" width="280" />
+	<h3>Learn about animals from all eras in an inmersive and interactive way</h3>
+
+	
+![Technologie Icons](https://skillicons.dev/icons?i=html,css,tailwind,typescript,react,threejs,vitest,supabase,postgresql,nodejs,vite,figma,vercel,github,git "Technologie Icons")
+
+</div>
 
 ## 🚀 Demo
 
